@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EDED"
+    tools:context=".ChatAtivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        
+        <!--Reciever Profile-->
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/profileIv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_face_24"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center">
+
+
+            <!--Reciever Name-->
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text=" His Name"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <!--Reciever Online Status-->
+            <TextView
+                android:id="@+id/userStatusTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text=" Online"
+                android:textStyle="bold"/>
+        </LinearLayout>
+            <ImageView
+                android:layout_marginEnd="5dp"
+                android:id="@+id/blockIv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_check_circle_24"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--Recycler View-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chat_recyclerview"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/chatlayout" />
+       <LinearLayout
+        android:id="@+id/chatlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+           <ImageButton
+               android:id="@+id/attachBtn"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:background="@color/white"
+               android:src="@drawable/ic_baseline_attach_file_24"/>
+
+
+           <EditText
+            android:id="@+id/messageEt"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Start Typing..."
+            android:padding="15dp"
+            android:inputType="textCapSentences | textMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+           <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_send_24" />
+       </LinearLayout>
+
+</RelativeLayout>
